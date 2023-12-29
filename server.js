@@ -43,11 +43,15 @@ app.use(
 );
 app.use(haltOnTimedout);
 
+const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = "mongodb+srv://" + process.env.USER + ":" + process.env.PASS + "@" + process.env.HOST;
 
-const client = new mongodb.MongoClient(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  }
 });
 let collection = null;
 

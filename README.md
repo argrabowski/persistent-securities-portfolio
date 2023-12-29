@@ -1,5 +1,7 @@
 ## Short Stack Securities Portfolio
 
+https://securities-portfolio-persistent.glitch.me
+
 **Summary/Goal**: My application is a stock, ETF, or index fund financial portfolio creator and manager. The goal of this application is to allow users to create and
 manage their own financial securities portfolio. The site gathers information from the user about a security to produce a portfolio listing and attaches that item to
 the user's account. Information that the user must enter includes the name of the security, its ticker symbol, its price in dollars, and the amount of shares that the

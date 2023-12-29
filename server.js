@@ -43,15 +43,11 @@ app.use(
 );
 app.use(haltOnTimedout);
 
-const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = "mongodb+srv://" + process.env.USER + ":" + process.env.PASS + "@" + process.env.HOST;
 
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  }
+const client = new mongodb.MongoClient(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
 let collection = null;
 
@@ -63,7 +59,7 @@ app.post("/login", (req, res) => {
   client
     .connect()
     .then(() => {
-      return client.db("a3-database").collection("a3-data");
+      return client.db("persistent-database").collection("persistent-data");
     })
     .then((__collection) => {
       collection = __collection;

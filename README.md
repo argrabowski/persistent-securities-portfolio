@@ -1,4 +1,4 @@
-## Short Stack Securities Portfolio
+## Persistent Securities Portfolio
 
 https://securities-portfolio-persistent.glitch.me
 
